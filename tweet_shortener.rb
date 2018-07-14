@@ -43,17 +43,18 @@ end
 def selective_tweet_shortener (tweet)
   hash = dictionary
   tweet_array = tweet.split
+  
   if tweet.length > 140
     tweet_array.each do |word|
       hash.each do |orginal, subsitute|
         if word == orginal
           word.gsub!(word, subsitute)
+        end
+      end 
+    end
   else 
     tweet
   end
-end 
-end
-end
 tweet_array.join(" ") 
 end
 
